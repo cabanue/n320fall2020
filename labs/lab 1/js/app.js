@@ -1,9 +1,6 @@
 //creates counter to count when raindrops hit the ground 
 var hitGround = 0;
 
-//creates variable to be able to increase blue value of ground 
-// var blue = 5;
-
 //creates class for raindrop objects
 class Raindrop {
     constructor(rx, ry, rr, rc){
@@ -11,12 +8,16 @@ class Raindrop {
         this.y = ry;
         this.radius = rr;
         this.color = rc;
+
+        //this makes it so that each of the raindrops will have random speeds
         this.speed = 2 + Math.random() * 5;
     }
 
     //method to update attributes of Raindrop object
     update() {
+        //this makes it so that the raindrop moves by updating the y value of it.
         this.y = this.y + this.speed; 
+
         fill(this.color);
         circle(this.x, this.y, this.radius);
 
@@ -27,11 +28,15 @@ class Raindrop {
             //sends it back to the top. 
             this.y = 1
 
+            //sets the raindrop to a random location when it returns to the top 
+            this.x = Math.random() * (799 - 1) + 1
+
             //adds to counter when raindrop hits the ground 
             hitGround++;
+
+            //Once the counter reaches 10 hits to the ground, increase value of blue by 5
             if (hitGround % 10 == 0){
-                oogabooga = oogabooga + 5;
-                 console.log(blue);
+                gColor = gColor + 5;
             }
         }
     }
@@ -47,25 +52,27 @@ class Ground {
     }
 
     update () {
-        fill('rgb(0%,39%,'+oogabooga+'%)');
+        //uses the gColor variable for the rgb value so that it increase the blueness of the ground
+        fill('rgb(0%,39%,'+gColor+'%)');
 
         rect(this.x, this.y, this.width, this.height);
     }
 }
 
-var oogabooga = 5;
+//creates variable for the blue value of the ground
+var gColor = 5;
 
 //create array to store raindrops objects
 var raindrops = [];
 
+//creates a new instance of the ground class
 let ground = new Ground(0, 375, 800, 25);
-// ground.update();
 
 function setup() {
     createCanvas(800,400)
 
     //create multiple instances of raindrop class
-    for (i = 0; i < 30; i++){
+    for (i = 0; i < 50; i++){
 
         //creates new raindrops. Raindrops created will spawn at a random x value across the canvas
         let newRaindrops = new Raindrop(Math.random() * (799 - 1) + 1, 1, 15, [20, 196, 193]);
@@ -76,11 +83,10 @@ function setup() {
 function draw() {
     background(93, 97, 94);
 
-    //creates instance of the ground class
-    // let ground = new Ground(0, 375, 800, 25);
+    //calls the update method from the ground class to draw the rectangle to the canvas. 
     ground.update();
 
-    //draws all the raindrops stores in the array to the canvas
+    //calls all the raindrops from the array and draws them to the canvas
     for (i = 0; i < raindrops.length; i++){
         raindrops[i].update();
     }
