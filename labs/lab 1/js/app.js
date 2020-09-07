@@ -9,8 +9,8 @@ class Raindrop {
         this.radius = rr;
         this.color = rc;
 
-        //this makes it so that each of the raindrops will have random speeds
-        this.speed = 2 + Math.random() * 5;
+        //this sets the speed for the raindrops 
+        this.speed = 6;
     }
 
     //method to update attributes of Raindrop object
@@ -74,8 +74,8 @@ function setup() {
     //create multiple instances of raindrop class
     for (i = 0; i < 50; i++){
 
-        //creates new raindrops. Raindrops created will spawn at a random x value across the canvas
-        let newRaindrops = new Raindrop(Math.random() * (799 - 1) + 1, 1, 15, [20, 196, 193]);
+        //creates new raindrops. Raindrops created will spawn at a random x value across the canvas and a random y value above the canvas 
+        let newRaindrops = new Raindrop(Math.random() * (799 - 1) + 1, -Math.random() * (400 - 1) + 1, 15, [20, 196, 193]);
         raindrops.push(newRaindrops);
     }
 }
