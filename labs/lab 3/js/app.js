@@ -1,10 +1,10 @@
 //creates a class that is used for creating a vending machine object
 class VendingMachine {
     //in constructor, sets the values for whats being sold in the vending machine 
-    constructor(){
-        this.candy1 = "Skittles";
-        this.candy2 = "Sourpatch Kids";
-        this.chips1 = "Cool Ranch Doritos";
+    constructor(candy1, candy2, chips1){
+        this.candy1 = candy1;
+        this.candy2 = candy2;
+        this.chips1 = chips1;
         this.candy1Stock = 6;
         this.candy2Stock = 6;
         this.chips1Stock = 6;
@@ -57,7 +57,7 @@ class VendingMachine {
 }
 
 //makes new instance of the vending machine class
-let venmac = new VendingMachine;
+let venmac = new VendingMachine("Skittles", "Sour Patch Kids", "Cool Ranch Doritos");
 
 //grabs the div for the vending machine and stores it in a variable 
 let machineDiv = document.getElementById("machineDiv");
@@ -68,13 +68,13 @@ machineDiv.innerHTML = venmac.render();
 //function created to simulate buying an item
 function buyItem() {
     //if the button clicked is the one with the skittles 
-    if(event.target.id == "skittles"){
+    if(event.target.id == "candy1"){
         venmac.buyCandy1();
         machineDiv.innerHTML = venmac.render();
-    } else if (event.target.id == "sourPatch"){
+    } else if (event.target.id == "candy2"){
         venmac.buyCandy2();
         machineDiv.innerHTML = venmac.render();
-    } else if (event.target.id == "doritos"){
+    } else if (event.target.id == "chips1"){
         venmac.buyChips1();
         machineDiv.innerHTML = venmac.render();
     }
