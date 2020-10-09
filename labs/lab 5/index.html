@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h1{
+            color:#0e1099;
+        }
+
+        #topDiv{
+            background-color:#0e1099;
+            height: 100px;
+            width: 850px;
+            margin-bottom: 50px;
+        }
+
+        .gridThing{
+            display:grid;
+            grid-template-columns: auto auto auto;
+            grid-gap: 20px;
+            width: 800px; 
+            padding: 20px;
+            height: 400px;
+        }
+
+        .gridThing > div {
+            background-color: #8c1aa3;
+            height: 100px;
+            width: 250px;
+            padding: 20px 0;
+
+        }
+    </style>
+</head>
+<body>
+    <h1>Title</h1>
+    <div id="topDiv"></div>
+    <div class="gridThing">
+        <div class="bodyDiv"></div>
+        <div class="bodyDiv"></div>
+        <div class="bodyDiv"></div>
+        <div class="bodyDiv"></div>
+        <div class="bodyDiv"></div>
+        <div class="bodyDiv"></div>
+    </div>
+    
+
+</body>
+</html>
