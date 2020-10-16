@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #bookContainer{
+            display: flex;
+        }
+
+
+        #bookStyle{
+            /* flex: 1; */
+            text-align: center;
+            background-color:#e369ff;
+            float: left;
+            height: 200px;
+            width: 100px;
+            top: 50%;
+            left: 50%;
+            padding: 50px;
+            border: 2px solid black;
+            margin: 20px;
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="app">
+        <h1>{{ header }}</h1>
+        <div id="bookContainer">    
+            <books-view
+                v-for="book in books"
+                v-bind:book="book"
+                >
+            </books-view>
+            
+        </div>
+        <div >
+            <button v-on:click="changeVisible">Hide Book 2</button>
+        </div>    
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
