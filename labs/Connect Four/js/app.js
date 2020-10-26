@@ -1,56 +1,255 @@
 //uncommented code is current interactivity of svg
 //changing colors of circles will be used later for indicating who placed 
-let circles = document.getElementsByClassName("b")
-
-for(i=0; i < circles.length; i++){
-    circles[i].addEventListener("click", placePiece);
-}
-
-let spaces = circles;
-
-function placePiece(event){
-    event.target.style.fill = "#ad1403";
-}
-
+let winner = document.getElementById("yes");
 //#ad1403 color for player two: red
 //#f7df2a color for player two: yellow
 
 //will have properties for the spaces(will store circles in array)
 class Grid {
-    constructor(spaces){
-        this.spaces = circles;
+    constructor(){
+        this.spaces =  document.getElementsByClassName("b");
+        this.playerWon = 0;
     }
 
 
     //checks for win condition 
+    //will loop through each of the win conditions for
+    //horizontal, vertical, and diagonal 
     win(){
-
+        //checks vertical win condition in each row
+        for( let x=0; x < this.spaces.length; x++){
+            if(this.spaces[x].getAttribute("cx") == "75"){
+                for (let y = 5; y > 2; y--){
+                    if (this.spaces[y].getAttribute("selected") && this.spaces[y-1].getAttribute("selected") && this.spaces[y-2].getAttribute("selected") && this.spaces[y-3].getAttribute("selected") == "2"){
+                        winner.innerHTML = "Player 1 has Won!"
+                    } else if (this.spaces[y].getAttribute("selected") && this.spaces[y-1].getAttribute("selected") && this.spaces[y-2].getAttribute("selected") && this.spaces[y-3].getAttribute("selected") == "3"){
+                        winner.innerHTML = "Player 2 has Won!"
+                    }
+                }
+            }
+            else if (this.spaces[x].getAttribute("cx") == "175"){
+                for (let y = 11; y > 8; y--){
+                    if (this.spaces[y].getAttribute("selected") && this.spaces[y-1].getAttribute("selected") && this.spaces[y-2].getAttribute("selected") && this.spaces[y-3].getAttribute("selected") == "2"){
+                        winner.innerHTML = "Player 1 has Won!"
+                    } else if (this.spaces[y].getAttribute("selected") && this.spaces[y-1].getAttribute("selected") && this.spaces[y-2].getAttribute("selected") && this.spaces[y-3].getAttribute("selected") == "3"){
+                        winner.innerHTML = "Player 2 has Won!"
+                    }
+                }
+            }
+            else if (this.spaces[x].getAttribute("cx") == "275"){
+                for (let y = 17; y > 14; y--){
+                    if (this.spaces[y].getAttribute("selected") && this.spaces[y-1].getAttribute("selected") && this.spaces[y-2].getAttribute("selected") && this.spaces[y-3].getAttribute("selected") == "2"){
+                        winner.innerHTML = "Player 1 has Won!"
+                    } else if (this.spaces[y].getAttribute("selected") && this.spaces[y-1].getAttribute("selected") && this.spaces[y-2].getAttribute("selected") && this.spaces[y-3].getAttribute("selected") == "3"){
+                        winner.innerHTML = "Player 2 has Won!"
+                    }
+                }
+            }
+            else if (this.spaces[x].getAttribute("cx") == "375"){
+                for (let y = 23; y > 20; y--){
+                    if (this.spaces[y].getAttribute("selected") && this.spaces[y-1].getAttribute("selected") && this.spaces[y-2].getAttribute("selected") && this.spaces[y-3].getAttribute("selected") == "2"){
+                        winner.innerHTML = "Player 1 has Won!"
+                    } else if (this.spaces[y].getAttribute("selected") && this.spaces[y-1].getAttribute("selected") && this.spaces[y-2].getAttribute("selected") && this.spaces[y-3].getAttribute("selected") == "3"){
+                        winner.innerHTML = "Player 2 has Won!"
+                    }
+                }
+            }
+            else if (this.spaces[x].getAttribute("cx") == "475"){
+                for (let y = 29; y > 26; y--) {
+                    if (this.spaces[y].getAttribute("selected") && this.spaces[y-1].getAttribute("selected") && this.spaces[y-2].getAttribute("selected") && this.spaces[y-3].getAttribute("selected") == "2"){
+                        winner.innerHTML = "Player 1 has Won!"
+                    } else if (this.spaces[y].getAttribute("selected") && this.spaces[y-1].getAttribute("selected") && this.spaces[y-2].getAttribute("selected") && this.spaces[y-3].getAttribute("selected") == "3"){
+                        winner.innerHTML = "Player 2 has Won!"
+                    }
+                }
+            } 
+            else if (this.spaces[x].getAttribute("cx") == "575"){
+                for (let y = 35; y > 32; y--){
+                    if (this.spaces[y].getAttribute("selected") && this.spaces[y-1].getAttribute("selected") && this.spaces[y-2].getAttribute("selected") && this.spaces[y-3].getAttribute("selected") == "2"){
+                        winner.innerHTML = "Player 1 has Won!"
+                    } else if (this.spaces[y].getAttribute("selected") && this.spaces[y-1].getAttribute("selected") && this.spaces[y-2].getAttribute("selected") && this.spaces[y-3].getAttribute("selected") == "3"){
+                        winner.innerHTML = "Player 2 has Won!"
+                    }
+                }
+            }
+            else if (this.spaces[x].getAttribute("cx") == "675"){
+            for (let y = 41; y > 38; y--){
+                if (this.spaces[y].getAttribute("selected") && this.spaces[y-1].getAttribute("selected") && this.spaces[y-2].getAttribute("selected") && this.spaces[y-3].getAttribute("selected") == "2"){
+                        winner.innerHTML = "Player 1 has Won!"
+                    } else if (this.spaces[y].getAttribute("selected") && this.spaces[y-1].getAttribute("selected") && this.spaces[y-2].getAttribute("selected") && this.spaces[y-3].getAttribute("selected") == "3"){
+                        winner.innerHTML = "Player 2 has Won!"
+                    }
+            }
+            }
+        }
     }
+    
 
     //will clear the spaces to be able to play again 
     clear(){
         for(i=0; i < this.spaces.length; i++){
             spaces[i].style.fill = "white";
+            spaces[i].setAttribute("selected", "1");
         }
     }
 }
+
+let grid = new Grid()
 //will store who the players are, names, and color of piece they chose 
 class Piece {
+    constructor(){
+        this.p1 = new Player("Bob", "#ad1403")
+        this.p2 = new Player("John", "#f7df2a");
+        this.turn = 1;
+    }
     
     //placing the piece on the board
-    place(){
+    place(event){
+        if (event.target.getAttribute("cx") == "75") {
+            for (let y = 5; y > -1; y--) {
+                if (grid.spaces[y].getAttribute("selected") == "1") {
+                    if (this.turn % 2 == 0) {
+                        grid.spaces[y].style.fill = this.p2.color;
+                        grid.spaces[y].setAttribute("selected", "3");
+                        this.turn++;
+                        grid.win();
+                    } else {
+                        grid.spaces[y].style.fill = this.p1.color;
+                        grid.spaces[y].setAttribute("selected", "2");
+                        this.turn++;
+                        grid.win();
+                    }
+                    break;
+                }
+            }
+        } else if (event.target.getAttribute("cx") == "175") {
+            for (let y = 11; y > 5; y--) {
+                if (grid.spaces[y].getAttribute("selected") == "1") {
+                    if (this.turn % 2 == 0) {
+                        grid.spaces[y].style.fill = this.p2.color;
+                        grid.spaces[y].setAttribute("selected", "3");
+                        this.turn++;
+                        grid.win();
+                    } else {
+                        grid.spaces[y].style.fill = this.p1.color;
+                        grid.spaces[y].setAttribute("selected", "2");
+                        this.turn++;
+                        grid.win();
+                    }
+                    break;
+                }
+            }
+        } else if (event.target.getAttribute("cx") == "275") {
+            for (let y = 17; y > 11; y--) {
+                if (grid.spaces[y].getAttribute("selected") == "1") {
+                    if (this.turn % 2 == 0) {
+                        grid.spaces[y].style.fill = this.p2.color;
+                        grid.spaces[y].setAttribute("selected", "3");
+                        this.turn++;
+                        grid.win();
+                    } else {
+                        grid.spaces[y].style.fill = this.p1.color;
+                        grid.spaces[y].setAttribute("selected", "2");
+                        this.turn++;
+                        grid.win();
+                    }
+                    break;
+                }
+            }
+        } else if (event.target.getAttribute("cx") == "375") {
+            for (let y = 23; y > 17; y--) {
+                if (grid.spaces[y].getAttribute("selected") == "1") {
+                    if (this.turn % 2 == 0) {
+                        grid.spaces[y].style.fill = this.p2.color;
+                        grid.spaces[y].setAttribute("selected", "3");
+                        this.turn++;
+                        grid.win();
+                    } else {
+                        grid.spaces[y].style.fill = this.p1.color;
+                        grid.spaces[y].setAttribute("selected", "2");
+                        this.turn++;
+                        grid.win();
+                    }
+                    break;
+                }
+            }
+        } else if (event.target.getAttribute("cx") == "475") {
+            for (let y = 29; y > 23; y--) {
+                if (grid.spaces[y].getAttribute("selected") == "1") {
+                    if (this.turn % 2 == 0) {
+                        grid.spaces[y].style.fill = this.p2.color;
+                        grid.spaces[y].setAttribute("selected", "3");
+                        this.turn++;
+                        grid.win();
+                    } else {
+                        grid.spaces[y].style.fill = this.p1.color;
+                        grid.spaces[y].setAttribute("selected", "2");
+                        this.turn++;
+                        grid.win();
+                    }
+                    break;
+                }
+            }
+        } else if (event.target.getAttribute("cx") == "575") {
+            for (let y = 35; y > 29; y--) {
+                if (grid.spaces[y].getAttribute("selected") == "1") {
+                    if (this.turn % 2 == 0) {
+                        grid.spaces[y].style.fill = this.p2.color;
+                        grid.spaces[y].setAttribute("selected", "3");
+                        this.turn++;
+                        grid.win();
+                    } else {
+                        grid.spaces[y].style.fill = this.p1.color;
+                        grid.spaces[y].setAttribute("selected", "2");
+                        this.turn++;
+                        grid.win();
+                    }
+                    break;
+                }
+            }
+        } else if (event.target.getAttribute("cx") == "675") {
+            for (let y = 41; y > 35; y--) {
+                if (grid.spaces[y].getAttribute("selected") == "1") {
+                    if (this.turn % 2 == 0) {
+                        grid.spaces[y].style.fill = this.p2.color;
+                        grid.spaces[y].setAttribute("selected", "3");
+                        this.turn++;
+                        grid.win();
+                    } else {
+                        grid.spaces[y].style.fill = this.p1.color;
+                        grid.spaces[y].setAttribute("selected", "2");
+                        this.turn++;
+                        grid.win();
+                    }
+                    break;
+                }
+            }
+        }
+    }
+    //resets to have new players and change colors for pieces 
+    // reset(){
 
+    // }
+}
+
+//will have properties of the name of the player, color they choose for the piece, and will display who wins in top DIV 
+class Player {
+    constructor(name, color){
+        this.name = name;
+        this.color = color;
     }
 
-    //resets to have new players and change colors for pieces 
-    reset(){
+    displayWinner(){
 
     }
 }
 
-//store 2 players in an array 
+let piece = new Piece();
 
-//will have properties of the name of the player, color they choose for the piece, and will display who wins in top DIV 
-class Player {
+for(i=0; i < grid.spaces.length; i++){
+    grid.spaces[i].addEventListener("click", placePiece);
+}
 
+function placePiece(event){
+    piece.place(event);
 }
