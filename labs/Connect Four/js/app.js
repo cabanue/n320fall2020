@@ -1,8 +1,4 @@
-//uncommented code is current interactivity of svg
-//changing colors of circles will be used later for indicating who placed 
-let winner = document.getElementById("yes");
-//#ad1403 color for player two: red
-//#f7df2a color for player two: yellow
+ let winner = document.getElementById("yes");
 
 //will have properties for the spaces(will store circles in array)
 class Grid {
@@ -16,70 +12,226 @@ class Grid {
     //will loop through each of the win conditions for
     //horizontal, vertical, and diagonal 
     win(){
-        //checks vertical win condition in each row
         for( let x=0; x < this.spaces.length; x++){
-            if(this.spaces[x].getAttribute("cx") == "75"){
-                for (let y = 5; y > 2; y--){
-                    if (this.spaces[y].getAttribute("selected") && this.spaces[y-1].getAttribute("selected") && this.spaces[y-2].getAttribute("selected") && this.spaces[y-3].getAttribute("selected") == "2"){
-                        winner.innerHTML = "Player 1 has Won!"
-                    } else if (this.spaces[y].getAttribute("selected") && this.spaces[y-1].getAttribute("selected") && this.spaces[y-2].getAttribute("selected") && this.spaces[y-3].getAttribute("selected") == "3"){
-                        winner.innerHTML = "Player 2 has Won!"
+            if (this.playerWon == 0){
+                //checks vertical win condition in each row
+                //will check to see first if a circle is within a certain column then will start 
+                //from the bottom up and check if there are four in a row that are the same color 
+                if(this.spaces[x].getAttribute("cx") == "75"){
+                    for (let y = 5; y > 2; y--){
+                        if ((this.spaces[y].getAttribute("selected") == "2") && (this.spaces[y-1].getAttribute("selected") == "2") && (this.spaces[y-2].getAttribute("selected") == "2") && (this.spaces[y-3].getAttribute("selected") == "2")){
+                            this.playerWon = 1;
+                            winner.innerHTML = "Player 1 has Won!"
+                        } else if ((this.spaces[y].getAttribute("selected") == "3") && (this.spaces[y-1].getAttribute("selected") == "3") && (this.spaces[y-2].getAttribute("selected") == "3") && (this.spaces[y-3].getAttribute("selected") == "3")){
+                            this.playerWon = 1;
+                            winner.innerHTML = "Player 2 has Won!"
+                        }
                     }
                 }
-            }
-            else if (this.spaces[x].getAttribute("cx") == "175"){
-                for (let y = 11; y > 8; y--){
-                    if (this.spaces[y].getAttribute("selected") && this.spaces[y-1].getAttribute("selected") && this.spaces[y-2].getAttribute("selected") && this.spaces[y-3].getAttribute("selected") == "2"){
-                        winner.innerHTML = "Player 1 has Won!"
-                    } else if (this.spaces[y].getAttribute("selected") && this.spaces[y-1].getAttribute("selected") && this.spaces[y-2].getAttribute("selected") && this.spaces[y-3].getAttribute("selected") == "3"){
-                        winner.innerHTML = "Player 2 has Won!"
+                else if (this.spaces[x].getAttribute("cx") == "175"){
+                    for (let y = 11; y > 8; y--){
+                        if ((this.spaces[y].getAttribute("selected") == "2") && (this.spaces[y-1].getAttribute("selected") == "2") && (this.spaces[y-2].getAttribute("selected") == "2") && (this.spaces[y-3].getAttribute("selected") == "2")){
+                            this.playerWon = 1;
+                            winner.innerHTML = "Player 1 has Won!"
+                        } else if ((this.spaces[y].getAttribute("selected") == "3") && (this.spaces[y-1].getAttribute("selected") == "3") && (this.spaces[y-2].getAttribute("selected") == "3") && (this.spaces[y-3].getAttribute("selected") == "3")){
+                            this.playerWon = 1;
+                            winner.innerHTML = "Player 2 has Won!"
+                        }
                     }
                 }
-            }
-            else if (this.spaces[x].getAttribute("cx") == "275"){
-                for (let y = 17; y > 14; y--){
-                    if (this.spaces[y].getAttribute("selected") && this.spaces[y-1].getAttribute("selected") && this.spaces[y-2].getAttribute("selected") && this.spaces[y-3].getAttribute("selected") == "2"){
-                        winner.innerHTML = "Player 1 has Won!"
-                    } else if (this.spaces[y].getAttribute("selected") && this.spaces[y-1].getAttribute("selected") && this.spaces[y-2].getAttribute("selected") && this.spaces[y-3].getAttribute("selected") == "3"){
-                        winner.innerHTML = "Player 2 has Won!"
+                else if (this.spaces[x].getAttribute("cx") == "275"){
+                    for (let y = 17; y > 14; y--){
+                        if ((this.spaces[y].getAttribute("selected") == "2") && (this.spaces[y-1].getAttribute("selected") == "2") && (this.spaces[y-2].getAttribute("selected") == "2") && (this.spaces[y-3].getAttribute("selected") == "2")){
+                            this.playerWon = 1;
+                            winner.innerHTML = "Player 1 has Won!"
+                        } else if ((this.spaces[y].getAttribute("selected") == "3") && (this.spaces[y-1].getAttribute("selected") == "3") && (this.spaces[y-2].getAttribute("selected") == "3") && (this.spaces[y-3].getAttribute("selected") == "3")){
+                            this.playerWon = 1;
+                            winner.innerHTML = "Player 2 has Won!"
+                        }
                     }
                 }
-            }
-            else if (this.spaces[x].getAttribute("cx") == "375"){
-                for (let y = 23; y > 20; y--){
-                    if (this.spaces[y].getAttribute("selected") && this.spaces[y-1].getAttribute("selected") && this.spaces[y-2].getAttribute("selected") && this.spaces[y-3].getAttribute("selected") == "2"){
-                        winner.innerHTML = "Player 1 has Won!"
-                    } else if (this.spaces[y].getAttribute("selected") && this.spaces[y-1].getAttribute("selected") && this.spaces[y-2].getAttribute("selected") && this.spaces[y-3].getAttribute("selected") == "3"){
-                        winner.innerHTML = "Player 2 has Won!"
+                else if (this.spaces[x].getAttribute("cx") == "375"){
+                    for (let y = 23; y > 20; y--){
+                        if ((this.spaces[y].getAttribute("selected") == "2") && (this.spaces[y-1].getAttribute("selected") == "2") && (this.spaces[y-2].getAttribute("selected") == "2") && (this.spaces[y-3].getAttribute("selected") == "2")){
+                            this.playerWon = 1;
+                            winner.innerHTML = "Player 1 has Won!"
+                        } else if ((this.spaces[y].getAttribute("selected") == "3") && (this.spaces[y-1].getAttribute("selected") == "3") && (this.spaces[y-2].getAttribute("selected") == "3") && (this.spaces[y-3].getAttribute("selected") == "3")){
+                            this.playerWon = 1;
+                            winner.innerHTML = "Player 2 has Won!"
+                        }
                     }
                 }
-            }
-            else if (this.spaces[x].getAttribute("cx") == "475"){
-                for (let y = 29; y > 26; y--) {
-                    if (this.spaces[y].getAttribute("selected") && this.spaces[y-1].getAttribute("selected") && this.spaces[y-2].getAttribute("selected") && this.spaces[y-3].getAttribute("selected") == "2"){
-                        winner.innerHTML = "Player 1 has Won!"
-                    } else if (this.spaces[y].getAttribute("selected") && this.spaces[y-1].getAttribute("selected") && this.spaces[y-2].getAttribute("selected") && this.spaces[y-3].getAttribute("selected") == "3"){
-                        winner.innerHTML = "Player 2 has Won!"
+                else if (this.spaces[x].getAttribute("cx") == "475"){
+                    for (let y = 29; y > 26; y--) {
+                        if ((this.spaces[y].getAttribute("selected") == "2") && (this.spaces[y-1].getAttribute("selected") == "2") && (this.spaces[y-2].getAttribute("selected") == "2") && (this.spaces[y-3].getAttribute("selected") == "2")){
+                            this.playerWon = 1;
+                            winner.innerHTML = "Player 1 has Won!"
+                        } else if ((this.spaces[y].getAttribute("selected") == "3") && (this.spaces[y-1].getAttribute("selected") == "3") && (this.spaces[y-2].getAttribute("selected") == "3") && (this.spaces[y-3].getAttribute("selected") == "3")){
+                            this.playerWon = 1;
+                            winner.innerHTML = "Player 2 has Won!"
+                        }
+                    }
+                } 
+                else if (this.spaces[x].getAttribute("cx") == "575"){
+                    for (let y = 35; y > 32; y--){
+                        if ((this.spaces[y].getAttribute("selected") == "2") && (this.spaces[y-1].getAttribute("selected") == "2") && (this.spaces[y-2].getAttribute("selected") == "2") && (this.spaces[y-3].getAttribute("selected") == "2")){
+                            this.playerWon = 1;
+                            winner.innerHTML = "Player 1 has Won!"
+                        } else if ((this.spaces[y].getAttribute("selected") == "3") && (this.spaces[y-1].getAttribute("selected") == "3") && (this.spaces[y-2].getAttribute("selected") == "3") && (this.spaces[y-3].getAttribute("selected") == "3")){
+                            this.playerWon = 1;
+                            winner.innerHTML = "Player 2 has Won!"
+                        }
                     }
                 }
-            } 
-            else if (this.spaces[x].getAttribute("cx") == "575"){
-                for (let y = 35; y > 32; y--){
-                    if (this.spaces[y].getAttribute("selected") && this.spaces[y-1].getAttribute("selected") && this.spaces[y-2].getAttribute("selected") && this.spaces[y-3].getAttribute("selected") == "2"){
-                        winner.innerHTML = "Player 1 has Won!"
-                    } else if (this.spaces[y].getAttribute("selected") && this.spaces[y-1].getAttribute("selected") && this.spaces[y-2].getAttribute("selected") && this.spaces[y-3].getAttribute("selected") == "3"){
-                        winner.innerHTML = "Player 2 has Won!"
+                else if (this.spaces[x].getAttribute("cx") == "675"){
+                    for (let y = 41; y > 38; y--){
+                        if ((this.spaces[y].getAttribute("selected") == "2") && (this.spaces[y-1].getAttribute("selected") == "2") && (this.spaces[y-2].getAttribute("selected") == "2") && (this.spaces[y-3].getAttribute("selected") == "2")){
+                            this.playerWon = 1;
+                            winner.innerHTML = "Player 1 has Won!"
+                        } else if ((this.spaces[y].getAttribute("selected") == "3") && (this.spaces[y-1].getAttribute("selected") == "3") && (this.spaces[y-2].getAttribute("selected") == "3") && (this.spaces[y-3].getAttribute("selected") == "3")){
+                            this.playerWon = 1;
+                            winner.innerHTML = "Player 2 has Won!"
+                        }
                     }
                 }
-            }
-            else if (this.spaces[x].getAttribute("cx") == "675"){
-            for (let y = 41; y > 38; y--){
-                if (this.spaces[y].getAttribute("selected") && this.spaces[y-1].getAttribute("selected") && this.spaces[y-2].getAttribute("selected") && this.spaces[y-3].getAttribute("selected") == "2"){
-                        winner.innerHTML = "Player 1 has Won!"
-                    } else if (this.spaces[y].getAttribute("selected") && this.spaces[y-1].getAttribute("selected") && this.spaces[y-2].getAttribute("selected") && this.spaces[y-3].getAttribute("selected") == "3"){
-                        winner.innerHTML = "Player 2 has Won!"
+
+                //check horizontal win condition 
+                if(this.spaces[x].getAttribute("cx") == "75"){
+                    for (let y = 5; y > -1; y--){
+                        if ((this.spaces[y].getAttribute("selected") == "2") && (this.spaces[y+6].getAttribute("selected") == "2") && (this.spaces[y+12].getAttribute("selected") == "2") && (this.spaces[y+18].getAttribute("selected") == "2")){
+                            this.playerWon = 1;
+                            winner.innerHTML = "Player 1 has Won!"
+                        } else if ((this.spaces[y].getAttribute("selected") == "3") && (this.spaces[y+6].getAttribute("selected") == "3") && (this.spaces[y+12].getAttribute("selected") == "3") && (this.spaces[y+18].getAttribute("selected") == "3")){
+                            this.playerWon = 1;
+                            winner.innerHTML = "Player 2 has Won!"
+                        }
                     }
-            }
+                }
+                else if (this.spaces[x].getAttribute("cx") == "175"){
+                    for (let y = 11; y > 5; y--){
+                        if ((this.spaces[y].getAttribute("selected") == "2") && (this.spaces[y+6].getAttribute("selected") == "2") && (this.spaces[y+12].getAttribute("selected") == "2") && (this.spaces[y+18].getAttribute("selected") == "2")){
+                            this.playerWon = 1;
+                            winner.innerHTML = "Player 1 has Won!"
+                        } else if ((this.spaces[y].getAttribute("selected") == "3") && (this.spaces[y+6].getAttribute("selected") == "3") && (this.spaces[y+12].getAttribute("selected") == "3") && (this.spaces[y+18].getAttribute("selected") == "3")){
+                            this.playerWon = 1;
+                            winner.innerHTML = "Player 2 has Won!"
+                        }
+                    }
+                }
+                else if (this.spaces[x].getAttribute("cx") == "275"){
+                    for (let y = 17; y > 11; y--){
+                        if ((this.spaces[y].getAttribute("selected") == "2") && (this.spaces[y+6].getAttribute("selected") == "2") && (this.spaces[y+12].getAttribute("selected") == "2") && (this.spaces[y+18].getAttribute("selected") == "2")){
+                            this.playerWon = 1;
+                            winner.innerHTML = "Player 1 has Won!"
+                        } else if ((this.spaces[y].getAttribute("selected") == "3") && (this.spaces[y+6].getAttribute("selected") == "3") && (this.spaces[y+12].getAttribute("selected") == "3") && (this.spaces[y+18].getAttribute("selected") == "3")){
+                            this.playerWon = 1;
+                            winner.innerHTML = "Player 2 has Won!"
+                        }
+                    }
+                }
+                else if (this.spaces[x].getAttribute("cx") == "375"){
+                    for (let y = 23; y > 17; y--){
+                        if ((this.spaces[y].getAttribute("selected") == "2") && (this.spaces[y+6].getAttribute("selected") == "2") && (this.spaces[y+12].getAttribute("selected") == "2") && (this.spaces[y+18].getAttribute("selected") == "2")){
+                            this.playerWon = 1;
+                            winner.innerHTML = "Player 1 has Won!"
+                        } else if ((this.spaces[y].getAttribute("selected") == "3") && (this.spaces[y+6].getAttribute("selected") == "3") && (this.spaces[y+12].getAttribute("selected") == "3") && (this.spaces[y+18].getAttribute("selected") == "3")){
+                            this.playerWon = 1;
+                            winner.innerHTML = "Player 2 has Won!"
+                        }
+                    }
+                }
+
+                //checks diagonal win condition upwards
+                if(this.spaces[x].getAttribute("cx") == "75"){
+                    for (let y = 5; y > 2; y--){
+                        if ((this.spaces[y].getAttribute("selected") == "2") && (this.spaces[y+5].getAttribute("selected") == "2") && (this.spaces[y+10].getAttribute("selected") == "2") && (this.spaces[y+15].getAttribute("selected") == "2")){
+                            this.playerWon = 1;
+                            winner.innerHTML = "Player 1 has Won!"
+                        } else if ((this.spaces[y].getAttribute("selected") == "3") && (this.spaces[y+5].getAttribute("selected") == "3") && (this.spaces[y+10].getAttribute("selected") == "3") && (this.spaces[y+15].getAttribute("selected") == "3")){
+                            this.playerWon = 1;
+                            winner.innerHTML = "Player 2 has Won!"
+                        }
+                    }
+                }
+                else if (this.spaces[x].getAttribute("cx") == "175"){
+                    for (let y = 11; y > 8; y--){
+                        if ((this.spaces[y].getAttribute("selected") == "2") && (this.spaces[y+5].getAttribute("selected") == "2") && (this.spaces[y+10].getAttribute("selected") == "2") && (this.spaces[y+15].getAttribute("selected") == "2")){
+                            this.playerWon = 1;
+                            winner.innerHTML = "Player 1 has Won!"
+                        } else if ((this.spaces[y].getAttribute("selected") == "3") && (this.spaces[y+5].getAttribute("selected") == "3") && (this.spaces[y+10].getAttribute("selected") == "3") && (this.spaces[y+15].getAttribute("selected") == "3")){
+                            this.playerWon = 1;
+                            winner.innerHTML = "Player 2 has Won!"
+                        }
+                    }
+                }
+                else if (this.spaces[x].getAttribute("cx") == "275"){
+                    for (let y = 17; y > 14; y--){
+                        if ((this.spaces[y].getAttribute("selected") == "2") && (this.spaces[y+5].getAttribute("selected") == "2") && (this.spaces[y+10].getAttribute("selected") == "2") && (this.spaces[y+15].getAttribute("selected") == "2")){
+                            this.playerWon = 1;
+                            winner.innerHTML = "Player 1 has Won!"
+                        } else if ((this.spaces[y].getAttribute("selected") == "3") && (this.spaces[y+5].getAttribute("selected") == "3") && (this.spaces[y+10].getAttribute("selected") == "3") && (this.spaces[y+15].getAttribute("selected") == "3")){
+                            this.playerWon = 1;
+                            winner.innerHTML = "Player 2 has Won!"
+                        }
+                    }
+                }
+                else if (this.spaces[x].getAttribute("cx") == "375"){
+                    for (let y = 23; y > 20; y--){
+                        if ((this.spaces[y].getAttribute("selected") == "2") && (this.spaces[y+5].getAttribute("selected") == "2") && (this.spaces[y+10].getAttribute("selected") == "2") && (this.spaces[y+15].getAttribute("selected") == "2")){
+                            this.playerWon = 1;
+                            winner.innerHTML = "Player 1 has Won!"
+                        } else if ((this.spaces[y].getAttribute("selected") == "3") && (this.spaces[y+5].getAttribute("selected") == "3") && (this.spaces[y+10].getAttribute("selected") == "3") && (this.spaces[y+15].getAttribute("selected") == "3")){
+                            this.playerWon = 1;
+                            winner.innerHTML = "Player 2 has Won!"
+                        }
+                    }
+                }
+
+                //check diagonal win condition downwards
+                if (this.spaces[x].getAttribute("cx") == "375"){
+                    for (let y = 23; y > 20; y--){
+                        if ((this.spaces[y].getAttribute("selected") == "2") && (this.spaces[y-7].getAttribute("selected") == "2") && (this.spaces[y-14].getAttribute("selected") == "2") && (this.spaces[y-21].getAttribute("selected") == "2")){
+                            this.playerWon = 1;
+                            winner.innerHTML = "Player 1 has Won!"
+                        } else if ((this.spaces[y].getAttribute("selected") == "3") && (this.spaces[y-7].getAttribute("selected") == "3") && (this.spaces[y-14].getAttribute("selected") == "3") && (this.spaces[y-21].getAttribute("selected") == "3")){
+                            this.playerWon = 1;
+                            winner.innerHTML = "Player 2 has Won!"
+                        }
+                    }
+                }
+                else if (this.spaces[x].getAttribute("cx") == "475"){
+                    for (let y = 29; y > 26; y--) {
+                        if ((this.spaces[y].getAttribute("selected") == "2") && (this.spaces[y-7].getAttribute("selected") == "2") && (this.spaces[y-14].getAttribute("selected") == "2") && (this.spaces[y-21].getAttribute("selected") == "2")){
+                            this.playerWon = 1;
+                            winner.innerHTML = "Player 1 has Won!"
+                        } else if ((this.spaces[y].getAttribute("selected") == "3") && (this.spaces[y-7].getAttribute("selected") == "3") && (this.spaces[y-14].getAttribute("selected") == "3") && (this.spaces[y-21].getAttribute("selected") == "3")){
+                            this.playerWon = 1;
+                            winner.innerHTML = "Player 2 has Won!"
+                        }
+                    }
+                } 
+                else if (this.spaces[x].getAttribute("cx") == "575"){
+                    for (let y = 35; y > 32; y--){
+                        if ((this.spaces[y].getAttribute("selected") == "2") && (this.spaces[y-7].getAttribute("selected") == "2") && (this.spaces[y-14].getAttribute("selected") == "2") && (this.spaces[y-21].getAttribute("selected") == "2")){
+                            this.playerWon = 1;
+                            winner.innerHTML = "Player 1 has Won!"
+                        } else if ((this.spaces[y].getAttribute("selected") == "3") && (this.spaces[y-7].getAttribute("selected") == "3") && (this.spaces[y-14].getAttribute("selected") == "3") && (this.spaces[y-21].getAttribute("selected") == "3")){
+                            this.playerWon = 1;
+                            winner.innerHTML = "Player 2 has Won!"
+                        }
+                    }
+                }
+                else if (this.spaces[x].getAttribute("cx") == "675"){
+                    for (let y = 41; y > 38; y--){
+                        if ((this.spaces[y].getAttribute("selected") == "2") && (this.spaces[y-7].getAttribute("selected") == "2") && (this.spaces[y-14].getAttribute("selected") == "2") && (this.spaces[y-21].getAttribute("selected") == "2")){
+                            this.playerWon = 1;
+                            winner.innerHTML = "Player 1 has Won!"
+                        } else if ((this.spaces[y].getAttribute("selected") == "3") && (this.spaces[y-7].getAttribute("selected") == "3") && (this.spaces[y-14].getAttribute("selected") == "3") && (this.spaces[y-21].getAttribute("selected") == "3")){
+                            this.playerWon = 1;
+                            winner.innerHTML = "Player 2 has Won!"
+                        }
+                    }
+                }
             }
         }
     }
@@ -226,10 +378,6 @@ class Piece {
             }
         }
     }
-    //resets to have new players and change colors for pieces 
-    // reset(){
-
-    // }
 }
 
 //will have properties of the name of the player, color they choose for the piece, and will display who wins in top DIV 
@@ -239,9 +387,9 @@ class Player {
         this.color = color;
     }
 
-    displayWinner(){
+    // displayWinner(){
 
-    }
+    // }
 }
 
 let piece = new Piece();
