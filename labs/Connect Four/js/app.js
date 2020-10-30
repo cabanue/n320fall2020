@@ -22,10 +22,12 @@ class Grid {
                             this.playerWon = 1;
                             this.winner.innerHTML = "<h2>Player 1 has Won!</h2>";
                             this.stopPlace();
+                            this.winnerAnim();
                         } else if ((this.spaces[y].getAttribute("selected") == "3") && (this.spaces[y-1].getAttribute("selected") == "3") && (this.spaces[y-2].getAttribute("selected") == "3") && (this.spaces[y-3].getAttribute("selected") == "3")){
                             this.playerWon = 1;
                             this.winner.innerHTML = "<h2>Player 2 has Won!</h2>";
                             this.stopPlace();
+                            this.winnerAnim();
                         }
                     }
                 }
@@ -35,10 +37,12 @@ class Grid {
                             this.playerWon = 1;
                             this.winner.innerHTML = "<h2>Player 1 has Won!</h2>";
                             this.stopPlace();
+                            this.winnerAnim();
                         } else if ((this.spaces[y].getAttribute("selected") == "3") && (this.spaces[y-1].getAttribute("selected") == "3") && (this.spaces[y-2].getAttribute("selected") == "3") && (this.spaces[y-3].getAttribute("selected") == "3")){
                             this.playerWon = 1;
                             this.winner.innerHTML = "<h2>Player 2 has Won!</h2>";
                             this.stopPlace();
+                            this.winnerAnim();
                         }
                     }
                 }
@@ -48,10 +52,12 @@ class Grid {
                             this.playerWon = 1;
                             this.winner.innerHTML = "<h2>Player 1 has Won!</h2>";
                             this.stopPlace();
+                            this.winnerAnim();
                         } else if ((this.spaces[y].getAttribute("selected") == "3") && (this.spaces[y-1].getAttribute("selected") == "3") && (this.spaces[y-2].getAttribute("selected") == "3") && (this.spaces[y-3].getAttribute("selected") == "3")){
                             this.playerWon = 1;
                             this.winner.innerHTML = "<h2>Player 2 has Won!</h2>";
                             this.stopPlace();
+                            this.winnerAnim();
                         }
                     }
                 }
@@ -61,10 +67,12 @@ class Grid {
                             this.playerWon = 1;
                             this.winner.innerHTML = "<h2>Player 1 has Won!</h2>";
                             this.stopPlace();
+                            this.winnerAnim();
                         } else if ((this.spaces[y].getAttribute("selected") == "3") && (this.spaces[y-1].getAttribute("selected") == "3") && (this.spaces[y-2].getAttribute("selected") == "3") && (this.spaces[y-3].getAttribute("selected") == "3")){
                             this.playerWon = 1;
                             this.winner.innerHTML = "<h2>Player 2 has Won!</h2>";
                             this.stopPlace();
+                            this.winnerAnim();
                         }
                     }
                 }
@@ -74,10 +82,12 @@ class Grid {
                             this.playerWon = 1;
                             this.winner.innerHTML = "<h2>Player 1 has Won!</h2>";
                             this.stopPlace();
+                            this.winnerAnim();
                         } else if ((this.spaces[y].getAttribute("selected") == "3") && (this.spaces[y-1].getAttribute("selected") == "3") && (this.spaces[y-2].getAttribute("selected") == "3") && (this.spaces[y-3].getAttribute("selected") == "3")){
                             this.playerWon = 1;
                             this.winner.innerHTML = "<h2>Player 2 has Won!</h2>";
                             this.stopPlace();
+                            this.winnerAnim();
                         }
                     }
                 } 
@@ -87,10 +97,12 @@ class Grid {
                             this.playerWon = 1;
                             this.winner.innerHTML = "<h2>Player 1 has Won!</h2>";
                             this.stopPlace();
+                            this.winnerAnim();
                         } else if ((this.spaces[y].getAttribute("selected") == "3") && (this.spaces[y-1].getAttribute("selected") == "3") && (this.spaces[y-2].getAttribute("selected") == "3") && (this.spaces[y-3].getAttribute("selected") == "3")){
                             this.playerWon = 1;
                             this.winner.innerHTML = "<h2>Player 2 has Won!</h2>";
                             this.stopPlace();
+                            this.winnerAnim();
                         }
                     }
                 }
@@ -100,10 +112,12 @@ class Grid {
                             this.playerWon = 1;
                             this.winner.innerHTML = "<h2>Player 1 has Won!</h2>";
                             this.stopPlace();
+                            this.winnerAnim();
                         } else if ((this.spaces[y].getAttribute("selected") == "3") && (this.spaces[y-1].getAttribute("selected") == "3") && (this.spaces[y-2].getAttribute("selected") == "3") && (this.spaces[y-3].getAttribute("selected") == "3")){
                             this.playerWon = 1;
                             this.winner.innerHTML = "<h2>Player 2 has Won!</h2>";
                             this.stopPlace();
+                            this.winnerAnim();
                         }
                     }
                 }
@@ -115,10 +129,12 @@ class Grid {
                             this.playerWon = 1;
                             this.winner.innerHTML = "<h2>Player 1 has Won!</h2>";
                             this.stopPlace();
+                            this.winnerAnim();
                         } else if ((this.spaces[y].getAttribute("selected") == "3") && (this.spaces[y+6].getAttribute("selected") == "3") && (this.spaces[y+12].getAttribute("selected") == "3") && (this.spaces[y+18].getAttribute("selected") == "3")){
                             this.playerWon = 1;
                             this.winner.innerHTML = "<h2>Player 2 has Won!</h2>";
                             this.stopPlace();
+                            this.winnerAnim();
                         }
                     }
                 }
@@ -128,10 +144,12 @@ class Grid {
                             this.playerWon = 1;
                             this.winner.innerHTML = "<h2>Player 1 has Won!</h2>";
                             this.stopPlace();
+                            this.winnerAnim();
                         } else if ((this.spaces[y].getAttribute("selected") == "3") && (this.spaces[y+6].getAttribute("selected") == "3") && (this.spaces[y+12].getAttribute("selected") == "3") && (this.spaces[y+18].getAttribute("selected") == "3")){
                             this.playerWon = 1;
                             this.winner.innerHTML = "<h2>Player 2 has Won!</h2>";
                             this.stopPlace();
+                            this.winnerAnim();
                         }
                     }
                 }
@@ -141,10 +159,12 @@ class Grid {
                             this.playerWon = 1;
                             this.winner.innerHTML = "<h2>Player 1 has Won!</h2>";
                             this.stopPlace();
+                            this.winnerAnim();
                         } else if ((this.spaces[y].getAttribute("selected") == "3") && (this.spaces[y+6].getAttribute("selected") == "3") && (this.spaces[y+12].getAttribute("selected") == "3") && (this.spaces[y+18].getAttribute("selected") == "3")){
                             this.playerWon = 1;
                             this.winner.innerHTML = "<h2>Player 2 has Won!</h2>";
                             this.stopPlace();
+                            this.winnerAnim();
                         }
                     }
                 }
@@ -154,10 +174,12 @@ class Grid {
                             this.playerWon = 1;
                             this.winner.innerHTML = "<h2>Player 1 has Won!</h2>";
                             this.stopPlace();
+                            this.winnerAnim();
                         } else if ((this.spaces[y].getAttribute("selected") == "3") && (this.spaces[y+6].getAttribute("selected") == "3") && (this.spaces[y+12].getAttribute("selected") == "3") && (this.spaces[y+18].getAttribute("selected") == "3")){
                             this.playerWon = 1;
                             this.winner.innerHTML = "<h2>Player 2 has Won!</h2>";
                             this.stopPlace();
+                            this.winnerAnim();
                         }
                     }
                 }
@@ -169,10 +191,12 @@ class Grid {
                             this.playerWon = 1;
                             this.winner.innerHTML = "<h2>Player 1 has Won!</h2>";
                             this.stopPlace();
+                            this.winnerAnim();
                         } else if ((this.spaces[y].getAttribute("selected") == "3") && (this.spaces[y+5].getAttribute("selected") == "3") && (this.spaces[y+10].getAttribute("selected") == "3") && (this.spaces[y+15].getAttribute("selected") == "3")){
                             this.playerWon = 1;
                             this.winner.innerHTML = "<h2>Player 2 has Won!</h2>";
                             this.stopPlace();
+                            this.winnerAnim();
                         }
                     }
                 }
@@ -182,10 +206,12 @@ class Grid {
                             this.playerWon = 1;
                             this.winner.innerHTML = "<h2>Player 1 has Won!</h2>";
                             this.stopPlace();
+                            this.winnerAnim();
                         } else if ((this.spaces[y].getAttribute("selected") == "3") && (this.spaces[y+5].getAttribute("selected") == "3") && (this.spaces[y+10].getAttribute("selected") == "3") && (this.spaces[y+15].getAttribute("selected") == "3")){
                             this.playerWon = 1;
                             this.winner.innerHTML = "<h2>Player 2 has Won!</h2>";
                             this.stopPlace();
+                            this.winnerAnim();
                         }
                     }
                 }
@@ -195,10 +221,12 @@ class Grid {
                             this.playerWon = 1;
                             this.winner.innerHTML = "<h2>Player 1 has Won!</h2>";
                             this.stopPlace();
+                            this.winnerAnim();
                         } else if ((this.spaces[y].getAttribute("selected") == "3") && (this.spaces[y+5].getAttribute("selected") == "3") && (this.spaces[y+10].getAttribute("selected") == "3") && (this.spaces[y+15].getAttribute("selected") == "3")){
                             this.playerWon = 1;
                             this.winner.innerHTML = "<h2>Player 2 has Won!</h2>";
                             this.stopPlace();
+                            this.winnerAnim();
                         }
                     }
                 }
@@ -208,10 +236,12 @@ class Grid {
                             this.playerWon = 1;
                             this.winner.innerHTML = "<h2>Player 1 has Won!</h2>";
                             this.stopPlace();
+                            this.winnerAnim();
                         } else if ((this.spaces[y].getAttribute("selected") == "3") && (this.spaces[y+5].getAttribute("selected") == "3") && (this.spaces[y+10].getAttribute("selected") == "3") && (this.spaces[y+15].getAttribute("selected") == "3")){
                             this.playerWon = 1;
                             this.winner.innerHTML = "<h2>Player 2 has Won!</h2>";
                             this.stopPlace();
+                            this.winnerAnim();
                         }
                     }
                 }
@@ -223,10 +253,12 @@ class Grid {
                             this.playerWon = 1;
                             this.winner.innerHTML = "<h2>Player 1 has Won!</h2>";
                             this.stopPlace();
+                            this.winnerAnim();
                         } else if ((this.spaces[y].getAttribute("selected") == "3") && (this.spaces[y-7].getAttribute("selected") == "3") && (this.spaces[y-14].getAttribute("selected") == "3") && (this.spaces[y-21].getAttribute("selected") == "3")){
                             this.playerWon = 1;
                             this.winner.innerHTML = "<h2>Player 2 has Won!</h2>";
                             this.stopPlace();
+                            this.winnerAnim();
                         }
                     }
                 }
@@ -236,10 +268,12 @@ class Grid {
                             this.playerWon = 1;
                             this.winner.innerHTML = "<h2>Player 1 has Won!</h2>";
                             this.stopPlace();
+                            this.winnerAnim();
                         } else if ((this.spaces[y].getAttribute("selected") == "3") && (this.spaces[y-7].getAttribute("selected") == "3") && (this.spaces[y-14].getAttribute("selected") == "3") && (this.spaces[y-21].getAttribute("selected") == "3")){
                             this.playerWon = 1;
                             this.winner.innerHTML = "<h2>Player 2 has Won!</h2>";
                             this.stopPlace();
+                            this.winnerAnim();
                         }
                     }
                 } 
@@ -249,10 +283,12 @@ class Grid {
                             this.playerWon = 1;
                             this.winner.innerHTML = "<h2>Player 1 has Won!</h2>";
                             this.stopPlace();
+                            this.winnerAnim();
                         } else if ((this.spaces[y].getAttribute("selected") == "3") && (this.spaces[y-7].getAttribute("selected") == "3") && (this.spaces[y-14].getAttribute("selected") == "3") && (this.spaces[y-21].getAttribute("selected") == "3")){
                             this.playerWon = 1;
                             this.winner.innerHTML = "<h2>Player 2 has Won!</h2>";
                             this.stopPlace();
+                            this.winnerAnim();
                         }
                     }
                 }
@@ -262,10 +298,12 @@ class Grid {
                             this.playerWon = 1;
                             this.winner.innerHTML = "<h2>Player 1 has Won!</h2>";
                             this.stopPlace();
+                            this.winnerAnim();
                         } else if ((this.spaces[y].getAttribute("selected") == "3") && (this.spaces[y-7].getAttribute("selected") == "3") && (this.spaces[y-14].getAttribute("selected") == "3") && (this.spaces[y-21].getAttribute("selected") == "3")){
                             this.playerWon = 1;
                             this.winner.innerHTML = "<h2>Player 2 has Won!</h2>";
                             this.stopPlace();
+                            this.winnerAnim();
                         }
                     }
                 }
@@ -273,11 +311,17 @@ class Grid {
         }
     }
     
+    
     //makes it so people can't keep placing after someone wins
     stopPlace(){
         for (let i=0; i<this.spaces.length; i++){
             this.spaces[i].removeEventListener("click", placePiece)
         }
+    }
+
+    winnerAnim(){
+        TweenLite.to(this.winner, {duration:.6, scale:2.0})
+
     }
 }
 
