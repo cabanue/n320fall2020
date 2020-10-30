@@ -329,8 +329,8 @@ let grid = new Grid()
 //will store who the players are, names, and color of piece they chose 
 class Piece {
     constructor(){
-        this.p1 = new Player("Bob", "#ad1403")
-        this.p2 = new Player("John", "#f7df2a");
+        this.p1 = new Player("Player 1", "#ad1403");
+        this.p2 = new Player("Player 2", "#f7df2a");
         this.turn = 1;
     }
     
@@ -466,9 +466,6 @@ class Player {
         this.color = color;
     }
 
-    // displayWinner(){
-
-    // }
 }
 
 let piece = new Piece();
