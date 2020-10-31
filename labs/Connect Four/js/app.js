@@ -456,6 +456,10 @@ class Piece {
                 }
             }
         }
+        if (this.turn > 42){
+            grid.winner.innerHTML = "<h2>It's a tie!</h2>"
+            grid.winnerAnim();
+        }
     }
 }
 
